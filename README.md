@@ -5,26 +5,6 @@ TimeGuard Access Shield is a secure embedded access-control system that ensures 
 This system enhances safety, prevents unauthorized usage, and enables reliable automation in industrial or controlled environments.
 
 ---
-
-## Features
-
-- **Real-Time Clock Display**  
-  The LCD continuously displays the current real-time clock to the user.
-
-- **Password-Based Authentication**  
-  Users must press **'A'** on the keypad to enter the password entry mode.
-
-- **Time-Restricted Access Control**  
-  Machine access is granted **only if**:
-  - The entered password is correct  
-  - The access attempt occurs within valid working hours  
-  Access is denied even if the password is correct but the time is invalid.
-
-- **Interrupt-Based Settings Menu**  
-  An external interrupt switch allows the user to open a settings menu for configuration.
-
----
-
 ## Editing Menu Options
 
 The system provides the following editable parameters:
@@ -58,8 +38,7 @@ The project consists of multiple C files, each handling a dedicated module:
   Contains authentication logic, password validation, and time-based access checking.
 
 ---
-
-## How the System Works (Flow Summary)
+## How the System Works 
 
 1. System boots → RTC displayed.  
 2. User presses **'A'** → Password entry mode activates.  
