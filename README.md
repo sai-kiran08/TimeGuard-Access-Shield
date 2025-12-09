@@ -72,9 +72,8 @@ The project consists of multiple C files, each handling a dedicated module:
 
 ## Hardware / Module Requirements
 
-- Microcontroller (your specific MCU)  
+- Microcontroller (ARM7 LPC21XX)  
 - 16x2 LCD Display  
-- Keypad Matrix  
+- Keypad Matrix (4*4) 
 - RTC Module  
-- Interrupt Switch  
-- Power Supply  
+- VIC  (Vector interrupt controller)  
