@@ -7,3 +7,11 @@
 -whenever 'A' is pressed in keypad matrix it allows users to enter password.<br>
 -If entered password is correct and the authentication happens within valid working hours machine access is given,otherwise access is denied even if the password is correct.<br>
 -An interrupt switch is supplied to change or edit settings accordingly.<br>
+-editing menu contains<br>
+
+  1.Real Time Clock editing.<br>
+  
+  2.Working hours incrementing and decrementing.<br>
+  
+  3.Updating password.<br>
+  
