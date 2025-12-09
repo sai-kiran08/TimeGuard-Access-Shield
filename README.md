@@ -1,21 +1,80 @@
-# TimeGuard-Access-Shield
--Password-Controlled Time-Restricted Machine Operation System. 
+# TimeGuard Access Shield
+### Password-Controlled Time-Restricted Machine Operation System
 
--The project ensures that only authorized users can operate a device and only within the valid time schedule, improving safety,preventing unauthorized usage,and enabling reliable automation in industrial or controlled environments.
+TimeGuard Access Shield is a secure embedded access-control system that ensures only authorized users can operate a machine, and only during valid working hours.  
+This system enhances safety, prevents unauthorized usage, and enables reliable automation in industrial or controlled environments.
 
--LCD continously displays Real Time Clock.<br>
--whenever 'A' is pressed in keypad matrix it allows users to enter password.<br>
--If entered password is correct and the authentication happens within valid working hours machine access is given,otherwise access is denied even if the password is correct.<br>
--An interrupt switch is supplied to change or edit settings accordingly.<br>
+---
 
--editing menu contains<br>
+## Features
 
-  1.Real Time Clock editing.<br>
-  
-  2.Working hours incrementing and decrementing.<br>
-  
-  3.Updating password.<br>
-  
-  4.Exit from menu.<br>
+- **Real-Time Clock Display**  
+  The LCD continuously displays the current real-time clock to the user.
 
-  @project_upd1.c
+- **Password-Based Authentication**  
+  Users must press **'A'** on the keypad to enter the password entry mode.
+
+- **Time-Restricted Access Control**  
+  Machine access is granted **only if**:
+  - The entered password is correct  
+  - The access attempt occurs within valid working hours  
+  Access is denied even if the password is correct but the time is invalid.
+
+- **Interrupt-Based Settings Menu**  
+  An external interrupt switch allows the user to open a settings menu for configuration.
+
+---
+
+## Editing Menu Options
+
+The system provides the following editable parameters:
+
+1. **Real-Time Clock Editing**  
+2. **Working Hours Adjustment** (incrementing and decrementing)  
+3. **Password Update**  
+4. **Exit Menu**
+
+---
+
+## System Architecture Overview
+
+The project consists of multiple C files, each handling a dedicated module:
+
+- **@project_upd1.c**  
+  Contains the `main()` function and system initialization logic.
+
+- **@displaysec.c**  
+  Handles LCD display routines, RTC display, and menu display when an interrupt occurs.
+
+- **@editsec.c**  
+  Contains functions for editing:
+  - Time  
+  - Date  
+  - Day  
+  - Working hours  
+  - Password updates  
+
+- **@authenti.c**  
+  Contains authentication logic, password validation, and time-based access checking.
+
+---
+
+## How the System Works (Flow Summary)
+
+1. System boots → RTC displayed.  
+2. User presses **'A'** → Password entry mode activates.  
+3. System verifies password.  
+4. If correct → system checks whether the time is within working hours.  
+5. If both conditions are satisfied → machine access granted.  
+6. Interrupt switch at any time → open settings menu.  
+
+---
+
+## Hardware / Module Requirements
+
+- Microcontroller (your specific MCU)  
+- 16x2 LCD Display  
+- Keypad Matrix  
+- RTC Module  
+- Interrupt Switch  
+- Power Supply  
