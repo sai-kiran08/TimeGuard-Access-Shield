@@ -16,3 +16,6 @@
   
   3.Updating password.<br>
   
+  4.Exit from menu.<br>
+
+  @project_upd1.c
